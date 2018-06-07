@@ -6,10 +6,11 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 100px;
   text-align: center;
+  padding-top: 100px;
 }
 
 body {
-  padding-top: 100px;
+
 }
 
 
@@ -39,4 +40,13 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
+}
+
+/* alerts */
+.alert-notice{
+    color: white;
+    background-color: green;
+    width: 60%;
+    text-align: center;
+    margin: 60px auto;
 }

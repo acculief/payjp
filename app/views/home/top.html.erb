@@ -12,10 +12,6 @@
   <div>
     <h1>PAY.JP Sample pay system</h1>
 
-    <% if flash[:notice] %>
-    <%= flash[:notice] %>
-    <% end %>
-
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <%= form_tag("/pay",method:"post",datakey:@pub_env) do %>
