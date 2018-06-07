@@ -1,19 +1,37 @@
-<h1>PAY.JPを利用したクレジットカード決済の実装</h1>
+<!DOCTYPE html>
+<html>
 
-<% if flash[:notice] %>
-<%= flash[:notice] %>
-<% end %>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "sample pay", "/home/top", id: "logo" %>
+    <nav>
+  </div>
+</header>
+<body>
+  <div>
+    <h1>PAY.JPを利用したクレジットカード決済の実装</h1>
+
+    <% if flash[:notice] %>
+    <%= flash[:notice] %>
+    <% end %>
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_tag("/pay",method:"post",datakey:@pub_env) do %>
 
 
-<%= form_tag("/pay",method:"post",datakey:@pub_env) do %>
+          <input type="text" name="number" maxlength="16" placeholder="カード番号"><br>
 
+          <input type="text"  name="cvc" maxlength="3" placeholder="CVC"><br>
 
-  <input type="text" name="number" maxlength="16" placeholder="カード番号"><br>
+          <input type="text" name="exp_month" maxlength="2" placeholder="月">
+          <input type="text" name="exp_year" maxlength="4" placeholder="西暦（４桁）"><br>
 
-  <input type="text"  name="cvc" maxlength="3" placeholder="CVC"><br>
+          <input type="submit">
+        <% end %>
+      </div>
+    </div>
 
-  <input type="text" name="exp_month" maxlength="2" placeholder="月">
-  <input type="text" name="exp_year" maxlength="4" placeholder="西暦（４桁）"><br>
-
-  <input type="submit">
-<% end %>
+  </div>
+</body>
+</html>
