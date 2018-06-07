@@ -5,7 +5,7 @@
 <% end %>
 
 
-<%= form_tag("/pay",method:"post",datakey:ENV["TEST_PUBKEY"]) do %>
+<%= form_tag("/pay",method:"post",datakey:@pub_env) do %>
 
 
   <input type="text" name="number" maxlength="16" placeholder="カード番号"><br>
