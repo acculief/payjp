@@ -14,18 +14,13 @@
 
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <%= form_tag("/pay",method:"post",datakey:@pub_env) do %>
+        <form action="/pay" method="post">
+          <!-- 注文情報などの情報ここから -->
+            :
+          <!-- 注文情報などの情報ここまで -->
+          <script src="https://checkout.pay.jp/" class="payjp-button" data-key=@pub_env></script>
+        </form>
 
-
-          <input type="text" name="number" maxlength="16" placeholder="カード番号"><br>
-
-          <input type="text"  name="cvc" maxlength="3" placeholder="CVC"><br>
-
-          <input type="text" name="exp_month" maxlength="2" placeholder="月">
-          <input type="text" name="exp_year" maxlength="4" placeholder="西暦（４桁）"><br>
-
-          <input type="submit">
-        <% end %>
       </div>
     </div>
 

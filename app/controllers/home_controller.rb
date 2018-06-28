@@ -7,18 +7,11 @@ class HomeController < ApplicationController
   def pay
      Payjp.api_key = @sec_env
 
-    token =Payjp::Token.create(
-    :card => {
-    :number => params[:number],
-    :cvc => params[:cvc],
-    :exp_month => params[:exp_month],
-    :exp_year => params[:exp_year]
-  }
-)
+
 
     charge = Payjp::Charge.create(
       :amount => 10000,
-      :card => token.id,
+      :card => payjp_token,
       :currency => 'jpy',
     )
 
